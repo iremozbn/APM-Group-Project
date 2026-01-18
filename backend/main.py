@@ -1,32 +1,43 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import db_manager  # Importing the database manager we created earlier
+from pydantic import BaseModel
+from typing import List, Optional
+import db_manager  # Importing our database manager module
 
-# Initialize the FastAPI application
 app = FastAPI()
 
-# --- CORS Configuration (Handling Task #7 in advance) ---
-# This allows the Frontend (running on a different port) to communicate with this Backend.
+# --- CORS Configuration (To allow Frontend communication) ---
+# This setup allows the Frontend (running on a different port) to access this API.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins (for development purposes)
+    allow_origins=["*"],  # Allows all origins (for development)
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],  # Allows all headers
 )
 
-# --- Task #2: Hello World Endpoint ---
+# --- Pydantic Model (Data Schema) ---
+# This defines the structure of the data we expect or return.
+# It acts as a contract with the Frontend.
+class Task(BaseModel):
+    id: int
+    title: str
+    description: Optional[str] = None
+    status: str
+    assignee: Optional[str] = None
+
+# --- Endpoint 1: Hello World (Root) ---
+# Useful for testing if the server is running.
 @app.get("/")
 def read_root():
-    """
-    Root endpoint to verify the server is running.
-    """
-    return {"message": "Hello World! Kanban Board API is running."}
+    return {"message": "Kanban API is running!"}
 
-# --- Preparation: Test DB Connection ---
-@app.get("/test-db")
-def test_db():
+# --- Endpoint 2: GET /tasks (List All Tasks) ---
+# This endpoint retrieves all tasks from the database.
+@app.get("/tasks", response_model=List[Task])
+def get_tasks():
     """
-    Temporary endpoint to check if db_manager can read the JSON file.
+    Reads all tasks from the JSON database and returns them as a list.
     """
-    return db_manager.get_all_tasks()
+    tasks = db_manager.get_all_tasks()
+    return tasks
