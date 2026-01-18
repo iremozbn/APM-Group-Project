@@ -40,4 +40,4 @@ Validation of the User Interface structure and interactions.
 
 | ID | Test Name | Steps to Reproduce | Expected Result | Status |
 |----|-----------|--------------------|-----------------|--------|
-| F-01 | Static UI Structure | 1. Open index.html in Chrome/Edge.<br>2. Inspect elements. | Page loads without errors. "To Do", "In Progress", "Done" columns exist with unique HTML IDs. | Failed |
+| F-01 | Static UI Structure | 1. Open index.html in Chrome/Edge.<br>2. Inspect elements. | Page loads without errors. "To Do", "In Progress", "Done" columns exist with unique HTML IDs. | Passed |
