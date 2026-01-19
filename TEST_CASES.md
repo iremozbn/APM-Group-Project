@@ -23,7 +23,7 @@ Checking how the system handles invalid inputs.
 |----|-----------|--------------------|-----------------|--------|
 | T-05 | Empty Input | 1. Leave input field empty.<br>2. Click Add button. | System should not add an empty task. Warning shown. | Passed |
 | T-06 | Long String | 1. Enter a very long text (100+ chars). | Text should wrap correctly in the card, not break layout. | Passed |
-| T-07 | Backend Down | 1. Stop the Python server.<br>2. Try to add a task. | User should see a connection error or alert. | Failed |
+| T-07 | Backend Down | 1. Stop the Python server.<br>2. Try to add a task. | User should see a connection error or alert. | Passed |
 
 ## 3. Backend & API Tests
 Technical validation of the REST API endpoints using Swagger UI.
