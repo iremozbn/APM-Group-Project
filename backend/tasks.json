@@ -35,13 +35,6 @@
         "assignee": "Susannah"
     },
     {
-        "id": 6,
-        "title": "Structural Engineer",
-        "description": "Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.",
-        "status": "In Progress",
-        "assignee": "Ernestine"
-    },
-    {
         "id": 7,
         "title": "Software Engineer IV",
         "description": "Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.",
