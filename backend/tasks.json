@@ -409,7 +409,7 @@
         "id": 59,
         "title": "Marketing Manager",
         "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus.",
-        "status": "In Progress",
+        "status": "Done",
         "assignee": "Cam"
     },
     {
@@ -6891,7 +6891,7 @@
         "id": 985,
         "title": "Administrative Officer",
         "description": "Nunc rhoncus dui vel sem.",
-        "status": "In Progress",
+        "status": "Done",
         "assignee": "Alphonse"
     },
     {
@@ -7018,6 +7018,13 @@
         "title": "",
         "description": "No description",
         "status": "To Do",
+        "assignee": "Unassigned"
+    },
+    {
+        "id": 1004,
+        "title": "exp123",
+        "description": "No description",
+        "status": "Done",
         "assignee": "Unassigned"
     }
 ]
